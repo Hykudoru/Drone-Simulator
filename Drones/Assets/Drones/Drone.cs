@@ -19,10 +19,6 @@ public class Drone : MonoBehaviour
     void Awake()
     {
         drone = GetComponent<Rigidbody>();
-        if (drone.drag < 1)
-        {
-            drone.drag = 1;
-        }
     }
     /*
     // Update is called once per frame
@@ -40,6 +36,9 @@ public class Drone : MonoBehaviour
         drone.angularVelocity = angularVelocity;
     }*/
 
+    float _speed = 5;
+    float _v1;
+    float _v2;
     private void Update()
     {
         yaw += Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
@@ -49,20 +48,32 @@ public class Drone : MonoBehaviour
         verticalThrust = drone.transform.up * Input.GetAxis("Vertical") * thrust * Time.deltaTime;
         horizontalThrust = (drone.transform.forward * pitch + drone.transform.right * roll) * drone.drag * Time.deltaTime;
         horizontalThrust.y = 0;
+
+_v1 = Input.GetAxis("Mouse Y") * _speed * Time.deltaTime;
+
     }
 
     private void FixedUpdate()
-    {
+    { 
+        
+_v2 = Input.GetAxis("Mouse Y") *_speed * Time.deltaTime;
+
         // roll/pitch/yaw
         drone.transform.localRotation = Quaternion.AngleAxis(yaw, Vector3.up)
-            * Quaternion.AngleAxis(roll, -Vector3.forward) 
-            * Quaternion.AngleAxis(pitch, Vector3.right);
+            * Quaternion.AngleAxis(roll*deg*Time.deltaTime, -Vector3.forward) 
+            * Quaternion.AngleAxis(pitch*deg*Time.deltaTime, Vector3.right);
 
         //move up/down/left/right/forward/back
         drone.velocity += verticalThrust + horizontalThrust;
 
         //cancel / equal - gravity 0 angle relative to world
-        drone.velocity += drone.transform.up * -Physics.gravity.y * Time.deltaTime;
-        drone.velocity += -Physics.gravity *(1 - Vector3.Dot(drone.transform.up, Vector3.up)) * Time.deltaTime;
+       // drone.velocity += drone.transform.up * -Physics.gravity.y * Time.deltaTime;
+        //drone.velocity += -Physics.gravity *(1 - Vector3.Dot(drone.transform.up, Vector3.up)) * Time.deltaTime;
+    }
+
+    private void LateUpdate()
+    {
+        Debug.Log(_v1);
+        Debug.Log(_v2);
     }
 }

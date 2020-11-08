@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Drone : MonoBehaviour
 {
     Rigidbody drone;
+    DroneInput controls;
     [SerializeField] [Range(1, 60f)] float deg = 28f;
-    [SerializeField] float thrust = 50f;
+    [SerializeField] float moveSpeed = 50f;
     [SerializeField] float turnSpeed = 360f;
+    float throttle;
     float roll;
     float pitch;
     float yaw;
@@ -19,6 +24,18 @@ public class Drone : MonoBehaviour
     void Awake()
     {
         drone = GetComponent<Rigidbody>();
+
+        controls = new DroneInput();
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
     }
     /*
     // Update is called once per frame
@@ -36,44 +53,53 @@ public class Drone : MonoBehaviour
         drone.angularVelocity = angularVelocity;
     }*/
 
-    float _speed = 5;
-    float _v1;
-    float _v2;
+
+    float maxSpeed = 100f;
     private void Update()
     {
-        yaw += Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
-        roll = Input.GetAxis("Horizontal-2") * deg;
-        pitch = Input.GetAxis("Vertical-2") * deg;
+        Vector3 inputMove = controls.Drone.Move.ReadValue<Vector2>().normalized;
+        float inputLook = controls.Drone.Look.ReadValue<float>();
+        roll = inputMove.x * deg;
+        pitch = inputMove.y * deg;
 
-        verticalThrust = drone.transform.up * Input.GetAxis("Vertical") * thrust * Time.deltaTime;
-        horizontalThrust = (drone.transform.forward * pitch + drone.transform.right * roll) * drone.drag * Time.deltaTime;
-        horizontalThrust.y = 0;
-
-_v1 = Input.GetAxis("Mouse Y") * _speed * Time.deltaTime;
-
+        Move((new Vector3(inputMove.x, 0f, inputMove.y) * moveSpeed) * Time.deltaTime);
+        Turn(inputLook * turnSpeed * Time.deltaTime);
     }
 
     private void FixedUpdate()
-    { 
-        
-_v2 = Input.GetAxis("Mouse Y") *_speed * Time.deltaTime;
-
-        // roll/pitch/yaw
-        drone.transform.localRotation = Quaternion.AngleAxis(yaw, Vector3.up)
-            * Quaternion.AngleAxis(roll*deg*Time.deltaTime, -Vector3.forward) 
-            * Quaternion.AngleAxis(pitch*deg*Time.deltaTime, Vector3.right);
-
-        //move up/down/left/right/forward/back
-        drone.velocity += verticalThrust + horizontalThrust;
-
-        //cancel / equal - gravity 0 angle relative to world
-       // drone.velocity += drone.transform.up * -Physics.gravity.y * Time.deltaTime;
-        //drone.velocity += -Physics.gravity *(1 - Vector3.Dot(drone.transform.up, Vector3.up)) * Time.deltaTime;
+    {
+        Fly();
     }
 
-    private void LateUpdate()
+
+
+
+
+
+
+
+
+
+    Vector3 move;
+    public void Move(Vector3 axes)
     {
-        Debug.Log(_v1);
-        Debug.Log(_v2);
+        move = (drone.transform.up * axes.y + drone.transform.right * axes.x + drone.transform.forward * axes.z);
+        //drone.velocity += v;
+    }
+
+    public void Turn(float delta)
+    {
+        yaw += delta;
+    }
+
+    public void Fly()
+    {
+        // roll/pitch/yaw
+        drone.transform.localRotation = Quaternion.AngleAxis(yaw, Vector3.up)
+            * Quaternion.AngleAxis(roll, -Vector3.forward)
+            * Quaternion.AngleAxis(pitch, Vector3.right);
+
+        //move up/down/left/right/forward/back
+        drone.velocity += move;
     }
 }

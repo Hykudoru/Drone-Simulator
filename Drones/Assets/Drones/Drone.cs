@@ -13,13 +13,13 @@ public class Drone : MonoBehaviour
     [SerializeField] [Range(1, 60f)] float deg = 28f;
     [SerializeField] float moveSpeed = 50f;
     [SerializeField] float turnSpeed = 360f;
+    [SerializeField] float throttleSpeed = 100f;
+    [SerializeField] float maxSpeed = 100f;
+
     float throttle;
     float roll;
     float pitch;
     float yaw;
-    Vector3 verticalThrust;
-    Vector3 horizontalThrust;
-    //Vector3 angularVelocity;
 
     void Awake()
     {
@@ -53,17 +53,15 @@ public class Drone : MonoBehaviour
         drone.angularVelocity = angularVelocity;
     }*/
 
-
-    float maxSpeed = 100f;
     private void Update()
     {
-        Vector3 inputMove = controls.Drone.Move.ReadValue<Vector2>().normalized;
-        float inputLook = controls.Drone.Look.ReadValue<float>();
-        roll = inputMove.x * deg;
-        pitch = inputMove.y * deg;
+       // Vector2 moveInput = controls.Drone.Move.ReadValue<Vector2>().normalized;// Move left/right/horizontal axis + back/forward/longitudinal axis  
+        throttle = controls.Drone.Throttle.ReadValue<float>(); // up/down/vertical axis
+        yaw = controls.Drone.Yaw.ReadValue<float>();// turn/rotate/yaw
+        pitch = controls.Drone.Pitch.ReadValue<float>();// 
+        roll = controls.Drone.Roll.ReadValue<float>();// 
 
-        Move((new Vector3(inputMove.x, 0f, inputMove.y) * moveSpeed) * Time.deltaTime);
-        Turn(inputLook * turnSpeed * Time.deltaTime);
+        //Turn(yaw * turnSpeed * Time.deltaTime);
     }
 
     private void FixedUpdate()

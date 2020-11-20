@@ -73,17 +73,6 @@ public class Drone : MonoBehaviour
        // Vector2.ClampMagnitude(move, 10f);
     }
 
-    
-
-
-
-
-
-
-
-
-
-
     Vector3 move;
     
     private void FixedUpdate()

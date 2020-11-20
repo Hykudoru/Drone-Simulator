@@ -16,11 +16,6 @@ public class Drone : MonoBehaviour
     [SerializeField] float throttleSpeed = 100f;
     [SerializeField] float maxSpeed = 100f;
 
-    float throttle;
-    float roll;
-    float pitch;
-    float yaw;
-
     void Awake()
     {
         drone = GetComponent<Rigidbody>();
@@ -36,48 +31,56 @@ public class Drone : MonoBehaviour
     {
         controls.Disable();
     }
-    /*
-    // Update is called once per frame
-    void Update()
-    {
-        angularVelocity.y = Input.GetAxis("Horizontal") * turnSpeed;
-        velocity.y = Input.GetAxis("Vertical");
-
-        move = (transform.right * Input.GetAxis("Horizontal-2")+transform.forward * Input.GetAxis("Vertical-2"));
-    }
-
-    private void FixedUpdate()
-    {
-        drone.velocity += (velocity * thrust + move* moveSpeed)*Time.deltaTime;
-        drone.angularVelocity = angularVelocity;
-    }*/
 
     private void Update()
     {
         // Vector2 moveInput = controls.Drone.Move.ReadValue<Vector2>().normalized;// Move left/right/horizontal axis + back/forward/longitudinal axis  
-        
-        //yaw = controls.Drone.Yaw.ReadValue<float>();// turn/rotate/yaw
-        
-        Vector3 m;
-        m.y = throttle = controls.Drone.Throttle.ReadValue<float>(); // up/down/vertical axis
-        m.z = pitch = controls.Drone.Pitch.ReadValue<float>();// 
-        m.x = roll = controls.Drone.Roll.ReadValue<float>();// 
 
-        Move(m*moveSpeed *Time.deltaTime);
-        Look(controls.Drone.Yaw.ReadValue<float>() * turnSpeed * Time.deltaTime);
+      //  float turn = yaw = controls.Drone.Yaw.ReadValue<float>();// turn/rotate/yaw
+
+        Vector3 move;
+        move.y = throttle = controls.Drone.Throttle.ReadValue<float>(); // up/down/vertical axis
+        move.z = pitch = controls.Drone.Pitch.ReadValue<float>();// 
+        move.x = roll = controls.Drone.Roll.ReadValue<float>();// 
+
+        move.Normalize();
+        move.x *= moveSpeed;
+        move.z *= moveSpeed;
+        move.y *= throttleSpeed;
+
+        this.Thrust((move*Time.deltaTime), (controls.Drone.Yaw.ReadValue<float>() * turnSpeed * Time.deltaTime));
     }
 
     private void LateUpdate()
     {
         //test
-       // Vector2.ClampMagnitude(move, 10f);
+        // Vector2.ClampMagnitude(move, 10f);
+        Debug.Log(drone.velocity.magnitude);
     }
 
+
+
+
+
+
+
+    float throttle;
+    float roll;
+    float pitch;
+    float yaw;
     Vector3 move;
+
+    
     
     private void FixedUpdate()
     {
         Fly();
+    }
+    
+    void Thrust(Vector3 axes, float turn)
+    {
+        move = (drone.transform.up * axes.y + drone.transform.right * axes.x + drone.transform.forward * axes.z);
+        yaw += turn;
     }
 
     public void Fly()
@@ -89,14 +92,5 @@ public class Drone : MonoBehaviour
 
         //move up/down/left/right/forward/back
         drone.velocity += move;
-    }
-    public void Move(Vector3 axes)
-    {
-        move = (drone.transform.up * axes.y + drone.transform.right * axes.x + drone.transform.forward * axes.z);
-    }
-
-    public void Look(float delta)
-    {
-        yaw += delta;
     }
 }

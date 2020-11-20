@@ -24,7 +24,6 @@ public class Drone : MonoBehaviour
     void Awake()
     {
         drone = GetComponent<Rigidbody>();
-
         controls = new DroneInput();
     }
 
@@ -55,19 +54,26 @@ public class Drone : MonoBehaviour
 
     private void Update()
     {
-       // Vector2 moveInput = controls.Drone.Move.ReadValue<Vector2>().normalized;// Move left/right/horizontal axis + back/forward/longitudinal axis  
-        throttle = controls.Drone.Throttle.ReadValue<float>(); // up/down/vertical axis
-        yaw = controls.Drone.Yaw.ReadValue<float>();// turn/rotate/yaw
-        pitch = controls.Drone.Pitch.ReadValue<float>();// 
-        roll = controls.Drone.Roll.ReadValue<float>();// 
+        // Vector2 moveInput = controls.Drone.Move.ReadValue<Vector2>().normalized;// Move left/right/horizontal axis + back/forward/longitudinal axis  
+        
+        //yaw = controls.Drone.Yaw.ReadValue<float>();// turn/rotate/yaw
+        
+        Vector3 m;
+        m.y = throttle = controls.Drone.Throttle.ReadValue<float>(); // up/down/vertical axis
+        m.z = pitch = controls.Drone.Pitch.ReadValue<float>();// 
+        m.x = roll = controls.Drone.Roll.ReadValue<float>();// 
 
-        //Turn(yaw * turnSpeed * Time.deltaTime);
+        Move(m*moveSpeed *Time.deltaTime);
+        Look(controls.Drone.Yaw.ReadValue<float>() * turnSpeed * Time.deltaTime);
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
-        Fly();
+        //test
+       // Vector2.ClampMagnitude(move, 10f);
     }
+
+    
 
 
 
@@ -79,15 +85,10 @@ public class Drone : MonoBehaviour
 
 
     Vector3 move;
-    public void Move(Vector3 axes)
+    
+    private void FixedUpdate()
     {
-        move = (drone.transform.up * axes.y + drone.transform.right * axes.x + drone.transform.forward * axes.z);
-        //drone.velocity += v;
-    }
-
-    public void Turn(float delta)
-    {
-        yaw += delta;
+        Fly();
     }
 
     public void Fly()
@@ -99,5 +100,14 @@ public class Drone : MonoBehaviour
 
         //move up/down/left/right/forward/back
         drone.velocity += move;
+    }
+    public void Move(Vector3 axes)
+    {
+        move = (drone.transform.up * axes.y + drone.transform.right * axes.x + drone.transform.forward * axes.z);
+    }
+
+    public void Look(float delta)
+    {
+        yaw += delta;
     }
 }

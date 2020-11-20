@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 3541209806302926729, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 3541209806302926729, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
@@ -297,6 +297,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone_2_Prototype
       objectReference: {fileID: 0}
+    - target: {fileID: 3893937143131440852, guid: 9feb64c7d592fb247ae0139596c5abc1,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893937143131440853, guid: 9feb64c7d592fb247ae0139596c5abc1,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4905939255208150088, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
       propertyPath: m_IsActive
@@ -337,26 +347,31 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: de1c97f2-0afd-46b1-b83e-802f0182ab8a
-    m_ActionName: Drone/Move[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/up]
-  - m_PersistentCalls:
       m_Calls: []
     m_ActionId: a1a8967d-54d2-4238-8ab4-99a3fa132e00
     m_ActionName: Drone/Look[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b695b784-52ca-4e9b-af14-346fb312cd3c
+    m_ActionName: Drone/Pitch[/Keyboard/downArrow,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 70b364f3-0541-49d5-a5fc-77540e4a13b8
+    m_ActionName: Drone/Roll[/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 207a0475-a52b-4bf2-8bc5-931708062a22
+    m_ActionName: Drone/Throttle[/Keyboard/s,/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6f6886a8-2911-4d1b-acfa-f04a164590fe
+    m_ActionName: Drone2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 434494e0-a96e-4e5b-85f0-0ab2a4c55a99
+    m_ActionName: Drone2/Look[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Drone
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

@@ -2,7 +2,7 @@
     "name": "DroneInput",
     "maps": [
         {
-            "name": "Drone",
+            "name": "DroneAdvanced",
             "id": "380ff3fa-c590-4f86-b089-647010934844",
             "actions": [
                 {
@@ -306,163 +306,7 @@
             ]
         },
         {
-            "name": "Drone2",
-            "id": "146cc590-062d-427a-abfa-0c1967429853",
-            "actions": [
-                {
-                    "name": "Move",
-                    "type": "Value",
-                    "id": "6f6886a8-2911-4d1b-acfa-f04a164590fe",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Look",
-                    "type": "Value",
-                    "id": "434494e0-a96e-4e5b-85f0-0ab2a4c55a99",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "557e35bd-d927-4e85-b6ad-14bb81399ef4",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "2D Vector",
-                    "id": "3531efc9-dcc9-421b-80da-857c9d3298b2",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "2615addc-e65b-4280-90a1-17baedcc0cb3",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "8bf7ab52-a6fa-4994-b57e-d847fc50ba5f",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "7bcded1c-b5b1-4b49-b247-1c804399f83d",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "46a711e2-49c0-4865-9a6d-72f4326635bf",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "e43c37cf-3174-45da-a1f3-e71b7c675496",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "2D Vector",
-                    "id": "21084d90-e341-4c97-82fc-6cdf09120bcb",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Look",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "b48532d0-6006-4e4f-9a8b-043afdbdc471",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "b2fb22f5-3b78-4d11-afc3-dc8c675b576f",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "0d4799f6-2011-423e-86fb-fa5a1cf88eaf",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "2d2866e9-84b6-45e6-90ec-3adfce9a4fd7",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "Drone3",
+            "name": "Drone",
             "id": "c3d56a9b-d009-405b-8ba6-aae777ee394c",
             "actions": [
                 {
@@ -482,7 +326,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Yaw",
+                    "name": "Rotate",
                     "type": "Value",
                     "id": "7a3902f0-2cf5-4613-83e5-c70ee72e9724",
                     "expectedControlType": "Axis",
@@ -503,7 +347,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
+                    "name": "WASD",
                     "id": "d6ffd9c5-592d-40ca-8e6e-006e4e149009",
                     "path": "2DVector",
                     "interactions": "",
@@ -516,7 +360,7 @@
                 {
                     "name": "up",
                     "id": "e8f48e6b-024a-4220-ba2c-7b10dd5f52f7",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -527,7 +371,7 @@
                 {
                     "name": "down",
                     "id": "d87f9868-74b4-4ec5-8f85-ba80cb9ddb4b",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -538,7 +382,7 @@
                 {
                     "name": "left",
                     "id": "bace7599-47ce-4719-abb3-65c5eb424795",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -549,7 +393,7 @@
                 {
                     "name": "right",
                     "id": "af60ca63-ea33-4d01-8599-35fe7ac342e4",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -591,7 +435,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "1D Axis",
+                    "name": "Arrows",
                     "id": "5c208afd-86cf-4e96-a796-459863cd8a5c",
                     "path": "1DAxis",
                     "interactions": "",
@@ -604,7 +448,7 @@
                 {
                     "name": "negative",
                     "id": "8a801410-92f8-4a2d-985d-a0c1d066e96c",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -615,7 +459,7 @@
                 {
                     "name": "positive",
                     "id": "9fb9af72-4632-4429-955a-716ff7476adf",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -630,7 +474,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Yaw",
+                    "action": "Rotate",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -641,7 +485,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Yaw",
+                    "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -652,40 +496,155 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Yaw",
+                    "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "1D Axis",
+                    "name": "Arrows",
                     "id": "4ab8b9f0-cd92-4a5d-a727-44437a53e72c",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Yaw",
+                    "action": "Rotate",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "negative",
                     "id": "36aa4344-c52b-4457-b65a-06a643a181d5",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Yaw",
+                    "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "positive",
                     "id": "603911db-4602-4abd-ac77-228b6efa3d0f",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "730c31c9-d516-44dd-af58-a68d8258f250",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Rotate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "6f2c6950-dc35-437c-a400-b0513e289171",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "a4032dc8-39af-4a7b-b78f-b1957a7e4a36",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Drone360",
+            "id": "1770e4e7-afb7-4d58-8e9d-04fe095ecc89",
+            "actions": [
+                {
+                    "name": "Flip",
+                    "type": "Value",
+                    "id": "f3f812b6-a5a9-44c5-8750-1cec65b6b1bc",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "eed58e4c-4617-4d6b-85af-00465d177e94",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Flip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "WASD",
+                    "id": "20f4651b-8a56-4ffd-8c4b-09edc6bbee54",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flip",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "f4a61770-8a11-49c7-8325-8cc1738ca0a1",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Flip",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "8e8454b5-9192-495f-84b7-02eb6a683881",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Flip",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "f6f2d8cc-f95e-4f00-a3ea-fcb9e59e3646",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Flip",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "b10f47f1-ab68-4cb3-b6b1-a4d6821fea9e",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Yaw",
+                    "action": "Flip",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

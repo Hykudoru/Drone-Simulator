@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 3541209806302926729, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.59
+      value: 0.99
       objectReference: {fileID: 0}
     - target: {fileID: 3541209806302926729, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
@@ -300,17 +300,37 @@ PrefabInstance:
     - target: {fileID: 3893937143131440852, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
       propertyPath: moveSpeed
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 3893937143131440852, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
       propertyPath: throttleSpeed
-      value: 50
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893937143131440852, guid: 9feb64c7d592fb247ae0139596c5abc1,
+        type: 3}
+      propertyPath: rollPitchSpeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893937143131440852, guid: 9feb64c7d592fb247ae0139596c5abc1,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893937143131440852, guid: 9feb64c7d592fb247ae0139596c5abc1,
+        type: 3}
+      propertyPath: maxRollPitch
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 3893937143131440853, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893937143131440853, guid: 9feb64c7d592fb247ae0139596c5abc1,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4905939255208150088, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}

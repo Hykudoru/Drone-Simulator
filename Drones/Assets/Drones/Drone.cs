@@ -10,10 +10,11 @@ public class Drone : MonoBehaviour
 {
     Rigidbody drone;
     DroneInput controls;
-    [SerializeField] [Range(1, 60f)] float deg = 28f;
-    [SerializeField] float moveSpeed = 50f;
+    [SerializeField] float moveSpeed = 100f;
     [SerializeField] float turnSpeed = 360f;
     [SerializeField] float throttleSpeed = 100f;
+    
+    [SerializeField] float maxRollPitch = 28f;
     [SerializeField] float maxSpeed = 100f;
 
     void Awake()
@@ -34,29 +35,13 @@ public class Drone : MonoBehaviour
 
     private void Update()
     {
-        // Vector2 moveInput = controls.Drone.Move.ReadValue<Vector2>().normalized;// Move left/right/horizontal axis + back/forward/longitudinal axis  
+        var directionInput = controls.Drone.Move.ReadValue<Vector2>() * moveSpeed;
+        var throttleInput = controls.Drone.Throttle.ReadValue<float>() * throttleSpeed;
+        var rotateInput = controls.Drone.Rotate.ReadValue<float>() * turnSpeed;
 
-      //  float turn = yaw = controls.Drone.Yaw.ReadValue<float>();// turn/rotate/yaw
-
-        Vector3 move;
-        move.y = throttle = controls.Drone.Throttle.ReadValue<float>(); // up/down/vertical axis
-        move.z = pitch = controls.Drone.Pitch.ReadValue<float>();// 
-        move.x = roll = controls.Drone.Roll.ReadValue<float>();// 
-
-        move.Normalize();
-        move.x *= moveSpeed;
-        move.z *= moveSpeed;
-        move.y *= throttleSpeed;
-
-        this.Thrust((move*Time.deltaTime), (controls.Drone.Yaw.ReadValue<float>() * turnSpeed * Time.deltaTime));
+        this.AddThrust(directionInput, throttleInput, rotateInput);
     }
-
-    private void LateUpdate()
-    {
-        //test
-        // Vector2.ClampMagnitude(move, 10f);
-        Debug.Log(drone.velocity.magnitude);
-    }
+    
 
 
 
@@ -64,33 +49,41 @@ public class Drone : MonoBehaviour
 
 
 
-    float throttle;
+
+
+
+    Vector3 thrust;
+    float yaw;
     float roll;
     float pitch;
-    float yaw;
-    Vector3 move;
 
-    
-    
     private void FixedUpdate()
     {
-        Fly();
-    }
-    
-    void Thrust(Vector3 axes, float turn)
-    {
-        move = (drone.transform.up * axes.y + drone.transform.right * axes.x + drone.transform.forward * axes.z);
-        yaw += turn;
+        this.Fly();
     }
 
-    public void Fly()
+    void Fly()
     {
+        //drone.transform.rotation = Quaternion.Slerp(drone.rotation, Quaternion.Euler(0f, 0f, 0f), 100);
+
         // roll/pitch/yaw
         drone.transform.localRotation = Quaternion.AngleAxis(yaw, Vector3.up)
             * Quaternion.AngleAxis(roll, -Vector3.forward)
             * Quaternion.AngleAxis(pitch, Vector3.right);
 
+
         //move up/down/left/right/forward/back
-        drone.velocity += move;
+        drone.velocity += thrust * Time.deltaTime;
     }
-}
+    
+    public void AddThrust(Vector2 velocity, float throttle, float rotate)
+    {
+        thrust = (drone.transform.right * velocity.x + drone.transform.forward * velocity.y);
+        thrust.y = 0;
+        thrust += drone.transform.up * throttle;
+        yaw += rotate * Time.deltaTime;
+        velocity.Normalize();
+        roll = velocity.x * maxRollPitch;
+        pitch = velocity.y * maxRollPitch;
+    }
+} 

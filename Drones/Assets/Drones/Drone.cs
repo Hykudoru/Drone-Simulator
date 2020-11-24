@@ -15,7 +15,6 @@ public class Drone : MonoBehaviour
     [SerializeField] float throttleSpeed = 100f;
     
     [SerializeField] float maxRollPitch = 28f;
-    [SerializeField] float maxSpeed = 100f;
 
     void Awake()
     {
@@ -35,55 +34,42 @@ public class Drone : MonoBehaviour
 
     private void Update()
     {
-        var directionInput = controls.Drone.Move.ReadValue<Vector2>() * moveSpeed;
-        var throttleInput = controls.Drone.Throttle.ReadValue<float>() * throttleSpeed;
-        var rotateInput = controls.Drone.Rotate.ReadValue<float>() * turnSpeed;
+        var directionInput = controls.Drone.Move.ReadValue<Vector2>() * moveSpeed * Time.deltaTime;
+        var throttleInput = controls.Drone.Throttle.ReadValue<float>() * throttleSpeed * Time.deltaTime;
+        var rotateInput = controls.Drone.Rotate.ReadValue<float>() * turnSpeed * Time.deltaTime;
 
         this.AddThrust(directionInput, throttleInput, rotateInput);
     }
     
 
-
-
-
-
-
-
-
-
-
     Vector3 thrust;
     float yaw;
     float roll;
     float pitch;
-
+    Quaternion targetRotation = Quaternion.identity;
+    
     private void FixedUpdate()
     {
-        this.Fly();
-    }
-
-    void Fly()
-    {
-        //drone.transform.rotation = Quaternion.Slerp(drone.rotation, Quaternion.Euler(0f, 0f, 0f), 100);
-
-        // roll/pitch/yaw
-        drone.transform.localRotation = Quaternion.AngleAxis(yaw, Vector3.up)
-            * Quaternion.AngleAxis(roll, -Vector3.forward)
-            * Quaternion.AngleAxis(pitch, Vector3.right);
-
+        
+        drone.rotation = Quaternion.Slerp(drone.transform.localRotation, targetRotation, Time.deltaTime*10);
 
         //move up/down/left/right/forward/back
-        drone.velocity += thrust * Time.deltaTime;
+        drone.velocity += thrust;
     }
     
-    public void AddThrust(Vector2 velocity, float throttle, float rotate)
+    public void AddThrust(Vector2 move, float throttle, float rotate)
     {
-        thrust = (drone.transform.right * velocity.x + drone.transform.forward * velocity.y);
+        thrust = (drone.transform.right * move.x + drone.transform.forward * move.y);
         thrust.y = 0;
         thrust += drone.transform.up * throttle;
-        yaw += rotate * Time.deltaTime;
-        velocity.Normalize();
-        roll = velocity.x * maxRollPitch;
-        pitch = velocity.y * maxRollPitch;
+        
+        yaw += rotate;
+        move.Normalize();
+        roll = move.x * maxRollPitch;
+        pitch = move.y * maxRollPitch;
+        // roll/pitch/yaw
+        targetRotation = Quaternion.AngleAxis(yaw, Vector3.up)
+            * Quaternion.AngleAxis(roll, -Vector3.forward)
+            * Quaternion.AngleAxis(pitch, Vector3.right);
     }
 } 

@@ -373,30 +373,6 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: a1a8967d-54d2-4238-8ab4-99a3fa132e00
-    m_ActionName: Drone/Look[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b695b784-52ca-4e9b-af14-346fb312cd3c
-    m_ActionName: Drone/Pitch[/Keyboard/downArrow,/Keyboard/upArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 70b364f3-0541-49d5-a5fc-77540e4a13b8
-    m_ActionName: Drone/Roll[/Keyboard/leftArrow,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 207a0475-a52b-4bf2-8bc5-931708062a22
-    m_ActionName: Drone/Throttle[/Keyboard/s,/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6f6886a8-2911-4d1b-acfa-f04a164590fe
-    m_ActionName: Drone2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 434494e0-a96e-4e5b-85f0-0ab2a4c55a99
-    m_ActionName: Drone2/Look[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 611b8559-bf1f-4d27-9727-65c1ebbef0fc
     m_ActionName: Drone3/Move[/XInputControllerWindows/rightStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -407,6 +383,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 7a3902f0-2cf5-4613-83e5-c70ee72e9724
     m_ActionName: Drone3/Yaw[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8f67ac9d-ff57-42cb-baf4-ed4cbfe92d80
+    m_ActionName: Drone/Rotate1[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/q,/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Drone

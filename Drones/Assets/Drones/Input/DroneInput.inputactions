@@ -2,310 +2,6 @@
     "name": "DroneInput",
     "maps": [
         {
-            "name": "DroneAdvanced",
-            "id": "380ff3fa-c590-4f86-b089-647010934844",
-            "actions": [
-                {
-                    "name": "Yaw",
-                    "type": "Value",
-                    "id": "a1a8967d-54d2-4238-8ab4-99a3fa132e00",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Pitch",
-                    "type": "Value",
-                    "id": "b695b784-52ca-4e9b-af14-346fb312cd3c",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Roll",
-                    "type": "Value",
-                    "id": "70b364f3-0541-49d5-a5fc-77540e4a13b8",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Throttle",
-                    "type": "Value",
-                    "id": "207a0475-a52b-4bf2-8bc5-931708062a22",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "1D Axis",
-                    "id": "ee25ff8b-1e0e-4308-a6b5-26057d53e4d0",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Yaw",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "d44ae27a-6d3f-4897-bc39-71c8a8a5b770",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Yaw",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "09ef165a-595f-465d-b1f5-94edb880dfea",
-                    "path": "<Gamepad>/leftStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Yaw",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "6d6a8488-9a6c-475f-a433-ffa4ecf45d66",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Throttle",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "2d662bf0-8cb0-48e5-b25c-85dee8de1880",
-                    "path": "<Gamepad>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Throttle",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "d92d5b07-2b22-470c-b0cf-83def3ff9a02",
-                    "path": "<Gamepad>/leftStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Throttle",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "e26a9895-6696-4e0d-9920-bca7cb8f56b9",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Throttle",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "78343257-8a3d-401d-8958-cbc54995ff84",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Throttle",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "ff4fdf49-a17b-47ab-8a32-11ce46793094",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Throttle",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "a71164d5-5850-4fb5-954c-6cfb402a56dd",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pitch",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "cc6ca44b-27a8-4f36-a3c6-5b74e4295327",
-                    "path": "<Gamepad>/rightStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Pitch",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "d8706a61-ac9c-4453-b6a1-cffedb835946",
-                    "path": "<Gamepad>/rightStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Pitch",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "9e3aed65-77a6-456c-a555-fd42742410c4",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pitch",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "196d5e7c-9713-4749-86fc-56588bd083f3",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Pitch",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "7ec4efbc-ba73-4dd2-84bd-369d3da98380",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Pitch",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "1fd47a51-5bc8-4f16-bb95-6466ccb6040b",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Roll",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "f0746ac9-d5d0-4fc9-b102-b1b83d398772",
-                    "path": "<Gamepad>/rightStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Roll",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "a0c0f83d-b156-4fc8-be0f-bd4c18e7027d",
-                    "path": "<Gamepad>/rightStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Roll",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "3c68b2f5-12ff-42cb-9289-16b3573312c2",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Roll",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "1d4565ce-d1e4-49ed-a741-191d6bcb55c9",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Roll",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "2a373c11-5154-4510-a4a4-0c09f3264abb",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Roll",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "ee72ac46-dfd2-4fed-87a6-3635175f4914",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Yaw",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "3839d2b7-ce00-41dc-a382-6a4df2c1e61c",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Yaw",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "78d2e132-5aa7-4f83-acc3-6a6e7d3a3b72",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Yaw",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                }
-            ]
-        },
-        {
             "name": "Drone",
             "id": "c3d56a9b-d009-405b-8ba6-aae777ee394c",
             "actions": [
@@ -314,7 +10,7 @@
                     "type": "Value",
                     "id": "611b8559-bf1f-4d27-9727-65c1ebbef0fc",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "interactions": ""
                 },
                 {
@@ -322,7 +18,7 @@
                     "type": "Value",
                     "id": "7c03b406-3911-4ca3-a646-1145c1711fa9",
                     "expectedControlType": "Axis",
-                    "processors": "",
+                    "processors": "Normalize(min=-1,max=1)",
                     "interactions": ""
                 },
                 {
@@ -330,7 +26,15 @@
                     "type": "Value",
                     "id": "7a3902f0-2cf5-4613-83e5-c70ee72e9724",
                     "expectedControlType": "Axis",
-                    "processors": "",
+                    "processors": "Normalize(min=-1,max=1)",
+                    "interactions": ""
+                },
+                {
+                    "name": "Yaw",
+                    "type": "Value",
+                    "id": "8f67ac9d-ff57-42cb-baf4-ed4cbfe92d80",
+                    "expectedControlType": "Axis",
+                    "processors": "Normalize(min=-1,max=1)",
                     "interactions": ""
                 }
             ],
@@ -565,86 +269,103 @@
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "Drone360",
-            "id": "1770e4e7-afb7-4d58-8e9d-04fe095ecc89",
-            "actions": [
+                },
                 {
-                    "name": "Flip",
-                    "type": "Value",
-                    "id": "f3f812b6-a5a9-44c5-8750-1cec65b6b1bc",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "eed58e4c-4617-4d6b-85af-00465d177e94",
-                    "path": "<Gamepad>/rightStick",
+                    "name": "1D Axis",
+                    "id": "a0cb22c3-0a5e-4635-851f-bd16d1e50641",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Flip",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "WASD",
-                    "id": "20f4651b-8a56-4ffd-8c4b-09edc6bbee54",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Flip",
+                    "action": "Yaw",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "f4a61770-8a11-49c7-8325-8cc1738ca0a1",
-                    "path": "<Keyboard>/w",
+                    "name": "negative",
+                    "id": "e2f0d609-b0eb-403d-a5dc-95b5151a24b8",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Flip",
+                    "groups": "Gamepad",
+                    "action": "Yaw",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
-                    "id": "8e8454b5-9192-495f-84b7-02eb6a683881",
-                    "path": "<Keyboard>/s",
+                    "name": "positive",
+                    "id": "bd7e3b72-af8c-49c4-92b9-a2a186697b1c",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Flip",
+                    "groups": "Gamepad",
+                    "action": "Yaw",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "f6f2d8cc-f95e-4f00-a3ea-fcb9e59e3646",
-                    "path": "<Keyboard>/a",
+                    "name": "Arrows",
+                    "id": "cd67af4c-31e4-42ab-ad3f-7c0ac3a40b73",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yaw",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "f52c63b7-d6d8-4a44-a59b-bbcc82388dd3",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Flip",
+                    "action": "Yaw",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
-                    "id": "b10f47f1-ab68-4cb3-b6b1-a4d6821fea9e",
-                    "path": "<Keyboard>/d",
+                    "name": "positive",
+                    "id": "61fb5fb0-f739-4d73-9545-47736997722a",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Flip",
+                    "action": "Yaw",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "14f05918-1bcf-4191-8b85-ad2831b14c78",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Yaw",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "0973edef-3fce-4ade-a764-7e8915cb28cb",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Yaw",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "4da9ea6f-01ca-4c50-9637-327de6c290f6",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Yaw",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

@@ -349,7 +349,7 @@ PrefabInstance:
     - target: {fileID: 3541209806302926729, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3541209806302926729, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
@@ -405,6 +405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893937143131440852, guid: 9feb64c7d592fb247ae0139596c5abc1,
+        type: 3}
+      propertyPath: rollPitchSpeed
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 3893937143131440853, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
@@ -729,7 +734,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679467664}
   m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 0, y: 2.8, z: -10.4}
+  m_LocalPosition: {x: 0, y: 3, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

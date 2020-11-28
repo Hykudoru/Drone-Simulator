@@ -44,17 +44,35 @@ public class Drone : MonoBehaviour
         move.y = 0;
         throttle = drone.transform.up * throtteInput * throttleSpeed;
 
-        roll = move.x * maxDegPitchRoll;// rollPitchSpeed;
-        pitch = move.z * maxDegPitchRoll;// rollPitchSpeed;
+        roll = moveInput.x * maxDegPitchRoll;// rollPitchSpeed;
+        pitch = moveInput.y * maxDegPitchRoll;// rollPitchSpeed;
         yaw = yawInput * yawTurnSpeed;
     }
 
+    float rotation;
+
     private void FixedUpdate()
-    {
+    {/*
+        rotation += new Vector3(pitch, yaw, roll) * Time.deltaTime;
+        rotation.x = Mathf.Clamp(rotation.x, -maxDegPitchRoll, maxDegPitchRoll);
+        rotation.z = Mathf.Clamp(rotation.z, -maxDegPitchRoll, maxDegPitchRoll);
+        drone.transform.localRotation = Quaternion.Euler(rotation);
+        */
+        //drone.transform.localRotation = Quaternion.Slerp(drone.transform.localRotation,  targetRot, rollPitchSpeed * Time.deltaTime);
+        //drone.transform.localRotation *= Quaternion.Euler(Vector3.up * yaw * Time.deltaTime);
+
         // roll/pitch/yaw
         //var rotAxis = Vector3.Cross(drone.transform.up, move);
-        //drone.transform.localRotation = Quaternion.AngleAxis(rotate, Vector3.up) * Quaternion.AngleAxis(maxDegPitchRoll, rotAxis);
+        //drone.transform.localRotation = Quaternion.Euler(rotation) *Quaternion.AngleAxis(maxDegPitchRoll, rotAxis);
         //drone.angularVelocity = Vector3.up * yaw * Time.deltaTime;
+
+
+        // roll/pitch/yaw
+        var targetRotation = Quaternion.AngleAxis(yaw*Time.deltaTime, Vector3.up)
+            * Quaternion.AngleAxis(roll, -Vector3.forward)
+            * Quaternion.AngleAxis(pitch, Vector3.right);
+
+        drone.transform.localRotation = Quaternion.Slerp(drone.transform.rotation, targetRotation, 20 * Time.deltaTime);
 
         // cancel gravity
         if (drone.useGravity)
@@ -65,6 +83,5 @@ public class Drone : MonoBehaviour
         //move up/down/left/right/forward/back
         drone.velocity += move * Time.deltaTime;
         drone.velocity += throttle * Time.deltaTime;
-
     }
 }

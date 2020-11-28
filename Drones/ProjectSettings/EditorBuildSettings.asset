@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Drones/DroneScene.unity
+    guid: 4e88f6cfc4dd463428fa880f1cdea980
   m_configObjects: {}

@@ -241,13 +241,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 50
   throttleSpeed: 50
-  yawSpeed: 360
-  tiltSpeed: 50
+  yawSpeed: 180
+  tiltSpeed: 25
   maxRollDeg: 28
   maxPitchDeg: 28
   maxTiltDeg: 28
-  maxAltitude: Infinity
-  maxDisplacement: Infinity
+  counterGravity: 1
 --- !u!114 &8390751280896578834
 MonoBehaviour:
   m_ObjectHideFlags: 0

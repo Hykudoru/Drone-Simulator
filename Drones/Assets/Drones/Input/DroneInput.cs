@@ -23,7 +23,7 @@ public class @DroneInput : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""8e6033f2-a28d-4dcb-bc7e-109c257fbb27"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": ""NormalizeVector2"",
+                    ""processors"": """",
                     ""interactions"": """"
                 },
                 {
@@ -31,7 +31,7 @@ public class @DroneInput : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""d4422ab0-1b47-48a9-b4a5-79d721e68bb8"",
                     ""expectedControlType"": ""Axis"",
-                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""processors"": """",
                     ""interactions"": """"
                 },
                 {
@@ -39,7 +39,7 @@ public class @DroneInput : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""0df63bba-78ce-4799-b759-d5be37706ee2"",
                     ""expectedControlType"": ""Axis"",
-                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""processors"": """",
                     ""interactions"": """"
                 }
             ],

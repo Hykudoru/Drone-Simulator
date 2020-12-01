@@ -7,19 +7,23 @@ public class Drone : MonoBehaviour
 {
     Rigidbody drone;
     DroneInput input;
+    Animator animator;
     [SerializeField] float moveSpeed = 50f;
     [SerializeField] float throttleSpeed = 50f;
     [SerializeField] float yawSpeed = 360f;
-    [SerializeField] float tiltSpeed = 50f;
-    [SerializeField] [Range(1, 60f)] float maxRollDeg = 28f;
-    [SerializeField] [Range(1, 60f)] float maxPitchDeg = 28f;
-    [SerializeField] [Range(1, 60f)] float maxTiltDeg = 28f;
-    [SerializeField] float maxAltitude = Mathf.Infinity;
-    [SerializeField] float maxDisplacement = Mathf.Infinity;
+    [SerializeField] float tiltSpeed = 20f;
+    [SerializeField] [Range(10, 60f)] float maxRollDeg = 28f;
+    [SerializeField] [Range(10, 60f)] float maxPitchDeg = 28f;
+    [SerializeField] [Range(10, 60f)] float maxTiltDeg = 28f;
+    [SerializeField] bool counterGravity = true;
     
     float roll;
     float pitch;
     float yaw;
+    Vector2 moveInput;
+    float throttleInput;
+    float yawInput;
+    
     Vector3 move = Vector3.zero;
     Vector3 throttle = Vector3.zero;
 
@@ -28,6 +32,7 @@ public class Drone : MonoBehaviour
     {
         drone = GetComponent<Rigidbody>();
         input = new DroneInput();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -40,9 +45,7 @@ public class Drone : MonoBehaviour
         input.Drone.Disable();
     }
 
-    Vector2 moveInput;
-    float throttleInput;
-    float yawInput;
+    
 
     private void Update()
     {
@@ -54,7 +57,7 @@ public class Drone : MonoBehaviour
         move.y = 0;
         throttle = drone.transform.up * throttleInput * throttleSpeed;
         
-        yaw += yawInput;
+        yaw += yawInput * yawSpeed * Time.deltaTime;
         roll = moveInput.x * maxRollDeg;
         pitch = moveInput.y * maxPitchDeg;
                                           
@@ -62,14 +65,13 @@ public class Drone : MonoBehaviour
     private void FixedUpdate()
     {
         // roll/pitch/yaw
-        var targetRotation = Quaternion.AngleAxis(yaw*yawSpeed*Time.deltaTime, Vector3.up)
+        Quaternion targetRotation = Quaternion.AngleAxis(yaw, Vector3.up)
             * Quaternion.AngleAxis(roll, -Vector3.forward)
             * Quaternion.AngleAxis(pitch, Vector3.right);
-
-        drone.transform.localRotation = targetRotation;//Quaternion.Slerp(drone.transform.localRotation, targetRotation, 20 * Time.deltaTime);
+        drone.transform.localRotation = Quaternion.Slerp(drone.transform.localRotation, targetRotation, tiltSpeed * Time.deltaTime);
 
         // cancel gravity
-        if (drone.useGravity)
+        if (counterGravity && drone.useGravity)
         {
             drone.velocity += -Physics.gravity * Time.deltaTime;
         }
@@ -81,21 +83,7 @@ public class Drone : MonoBehaviour
 
     private void LateUpdate()
     {
-        
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, drone.transform.TransformDirection(10f, 0f, 0f));
-        Gizmos.color = Color.blue;
-        Gizmos.DrawRay(transform.position, drone.transform.TransformDirection(0, 0, 10f));
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawRay(transform.position, drone.transform.TransformDirection(moveInput.x, 0, moveInput.y)*200);
-        Gizmos.color = Color.gray;
-        Gizmos.DrawRay(transform.position, drone.transform.TransformDirection(move));
-        Gizmos.color = Color.black;
-        Gizmos.DrawRay(transform.position, move);
+        //float currentPropellerSpeed = Mathf.Clamp(throttle.sqrMagnitude, 0f, 10f);
+        //animator.SetFloat("Thrust", currentPropellerSpeed);
     }
 }

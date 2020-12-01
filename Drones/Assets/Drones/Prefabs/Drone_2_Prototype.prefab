@@ -188,8 +188,9 @@ GameObject:
   - component: {fileID: 3541209806302926729}
   - component: {fileID: 3893937143131440853}
   - component: {fileID: 3893937143131440852}
+  - component: {fileID: 8390751280896578834}
   m_Layer: 0
-  m_Name: Drone-Prototype
+  m_Name: Drone_2_Prototype
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,9 +239,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28e953817a374a499e09183023a6fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deg: 30
-  thrust: 50
-  turnSpeed: 360
+  moveSpeed: 50
+  throttleSpeed: 50
+  yawSpeed: 360
+  tiltSpeed: 50
+  maxRollDeg: 28
+  maxPitchDeg: 28
+  maxTiltDeg: 28
+  maxAltitude: Infinity
+  maxDisplacement: Infinity
+--- !u!114 &8390751280896578834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3541209806302926730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: e62c1cb90dee00f4aa5433d16d2c405c,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Drone
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &3541209806589185414
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,9 +402,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.38268343, z: -0, w: 0.92387956}
   m_LocalPosition: {x: 0.0145, y: 0, z: 0.0145}
   m_LocalScale: {x: 0.2, y: 0.2, z: 4}
-  m_Children:
-  - {fileID: 4207729829916584845}
-  - {fileID: 6855476521483906144}
+  m_Children: []
   m_Father: {fileID: 2266467470543127699}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
@@ -459,9 +495,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 4}
-  m_Children:
-  - {fileID: 2956816725641936729}
-  - {fileID: 6723946133005060225}
+  m_Children: []
   m_Father: {fileID: 2266467470543127699}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
@@ -631,7 +665,7 @@ GameObject:
   - component: {fileID: 1570320147548162028}
   - component: {fileID: 8320497734710812217}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Propeller1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -644,13 +678,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4197106847320538938}
-  m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
-  m_LocalPosition: {x: -0.2, y: 1, z: 0.5}
-  m_LocalScale: {x: 10, y: 0.6, z: 0.05}
+  m_LocalRotation: {x: 0, y: 0.5, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 1.3859292, y: 0.2, z: 1.442498}
+  m_LocalScale: {x: 1.9376559, y: 0.120000005, z: 0.19957536}
   m_Children: []
-  m_Father: {fileID: 3541209807823664227}
+  m_Father: {fileID: 1230420647570285460}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
 --- !u!33 &5889799699636359196
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -829,6 +863,7 @@ Transform:
   - {fileID: 3541209806870600952}
   - {fileID: 3893937143315871638}
   - {fileID: 834604550651590346}
+  - {fileID: 1230420647570285460}
   m_Father: {fileID: 3541209806302926729}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -858,7 +893,7 @@ GameObject:
   - component: {fileID: 4998471118171672121}
   - component: {fileID: 8074528707922208085}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Propeller4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -871,13 +906,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5664728213900406367}
-  m_LocalRotation: {x: 0, y: -0.008726465, z: 0, w: 0.999962}
-  m_LocalPosition: {x: -0.2, y: 1, z: -0.5}
-  m_LocalScale: {x: 10, y: 0.6, z: 0.05}
+  m_LocalRotation: {x: -0, y: -0.5, z: -0, w: 0.8660254}
+  m_LocalPosition: {x: 1.4004292, y: 0.2, z: -1.427998}
+  m_LocalScale: {x: 1.9376565, y: 0.120000005, z: 0.19957542}
   m_Children: []
-  m_Father: {fileID: 3541209806870600952}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -1, z: 0}
+  m_Father: {fileID: 1230420647570285460}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6668738496234185965
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -951,7 +986,7 @@ GameObject:
   - component: {fileID: 7716137801492838911}
   - component: {fileID: 859014542279180171}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Propeller3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -964,13 +999,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5733303179680726695}
-  m_LocalRotation: {x: 0, y: -0.008726465, z: 0, w: 0.999962}
-  m_LocalPosition: {x: -0.2, y: 1, z: 0.5}
-  m_LocalScale: {x: 10, y: 0.6, z: 0.05}
+  m_LocalRotation: {x: -0, y: -0.5, z: -0, w: 0.8660254}
+  m_LocalPosition: {x: -1.4279978, y: 0.2, z: 1.4004295}
+  m_LocalScale: {x: 1.9376565, y: 0.120000005, z: 0.19957542}
   m_Children: []
-  m_Father: {fileID: 3541209806870600952}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -1, z: 0}
+  m_Father: {fileID: 1230420647570285460}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2378298890631908893
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1031,6 +1066,40 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6567506476357519218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1230420647570285460}
+  m_Layer: 0
+  m_Name: Propellers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1230420647570285460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6567506476357519218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2956816725641936729}
+  - {fileID: 6723946133005060225}
+  - {fileID: 4207729829916584845}
+  - {fileID: 6855476521483906144}
+  m_Father: {fileID: 2266467470543127699}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8949800906524290762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +1113,7 @@ GameObject:
   - component: {fileID: 3640780775777369059}
   - component: {fileID: 6693159603321619578}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Propeller2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1057,13 +1126,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8949800906524290762}
-  m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
-  m_LocalPosition: {x: -0.2, y: 1, z: -0.5}
-  m_LocalScale: {x: 10, y: 0.6, z: 0.05}
+  m_LocalRotation: {x: -0, y: 0.5, z: -0, w: 0.8660254}
+  m_LocalPosition: {x: -1.4424978, y: 0.2, z: -1.3859295}
+  m_LocalScale: {x: 1.9376559, y: 0.120000005, z: 0.19957536}
   m_Children: []
-  m_Father: {fileID: 3541209807823664227}
+  m_Father: {fileID: 1230420647570285460}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2345497834979203870
 MeshFilter:
   m_ObjectHideFlags: 0

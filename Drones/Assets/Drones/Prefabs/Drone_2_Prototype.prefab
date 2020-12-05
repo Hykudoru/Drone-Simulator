@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 70
   throttleSpeed: 50
-  yawSpeed: 180
+  yawSpeed: 270
   tiltSpeed: 14
   maxRollDeg: 28
   maxPitchDeg: 28

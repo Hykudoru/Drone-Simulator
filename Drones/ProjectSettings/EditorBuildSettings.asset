@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Drones/DroneScene.unity
+    path: Assets/Drones/Demo/Demo.unity
     guid: 4e88f6cfc4dd463428fa880f1cdea980
   m_configObjects: {}

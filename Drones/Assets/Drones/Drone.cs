@@ -8,7 +8,7 @@ public class Drone : MonoBehaviour
     Rigidbody drone;
     DroneInput input;
     Animator animator;
-    [SerializeField] float moveSpeed = 50f;
+    [SerializeField] float moveSpeed = 70f;
     [SerializeField] float throttleSpeed = 50f;
     [SerializeField] float yawSpeed = 360f;
     [SerializeField] float tiltSpeed = 20f;
@@ -82,7 +82,7 @@ public class Drone : MonoBehaviour
 
     private void LateUpdate()
     {
-        float currentPropellerSpeed = Mathf.Clamp(thrust.sqrMagnitude, 0f, 10f);
-        animator.SetFloat("Thrust", currentPropellerSpeed);
+        float propellerSpeed = Mathf.Clamp(thrust.sqrMagnitude, 0f, 10f);
+        animator.SetFloat("Thrust", propellerSpeed);
     }
 }

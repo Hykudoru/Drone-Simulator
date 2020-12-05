@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 3893937143131440853}
   - component: {fileID: 3893937143131440852}
   - component: {fileID: 8390751280896578834}
+  - component: {fileID: 8879485278695513610}
   m_Layer: 0
   m_Name: Drone_2_Prototype
   m_TagString: Untagged
@@ -239,10 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28e953817a374a499e09183023a6fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  moveSpeed: 70
   throttleSpeed: 50
   yawSpeed: 180
-  tiltSpeed: 25
+  tiltSpeed: 14
   maxRollDeg: 28
   maxPitchDeg: 28
   maxTiltDeg: 28
@@ -278,6 +279,25 @@ MonoBehaviour:
   m_DefaultActionMap: Drone
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &8879485278695513610
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3541209806302926730}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 12a4648c937e0b044bf3e4de4eaf5cdb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3541209806589185414
 GameObject:
   m_ObjectHideFlags: 0

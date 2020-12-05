@@ -413,16 +413,6 @@ PrefabInstance:
       propertyPath: rollPitchSpeed
       value: 28
       objectReference: {fileID: 0}
-    - target: {fileID: 3893937143131440852, guid: 9feb64c7d592fb247ae0139596c5abc1,
-        type: 3}
-      propertyPath: tiltSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3893937143131440852, guid: 9feb64c7d592fb247ae0139596c5abc1,
-        type: 3}
-      propertyPath: counterGravity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3893937143131440853, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
       propertyPath: m_UseGravity
@@ -431,7 +421,7 @@ PrefabInstance:
     - target: {fileID: 3893937143131440853, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
       propertyPath: m_Drag
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4905939255208150088, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
@@ -610,31 +600,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &658021518 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3541209806302926730, guid: 9feb64c7d592fb247ae0139596c5abc1,
-    type: 3}
-  m_PrefabInstance: {fileID: 350319091}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &658021519
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658021518}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 12a4648c937e0b044bf3e4de4eaf5cdb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &679467664
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +901,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -80, y: -20}
-  m_SizeDelta: {x: 160, y: 40}
+  m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1030152421
 MonoBehaviour:
@@ -1384,7 +1349,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 80, y: -20}
-  m_SizeDelta: {x: 160, y: 40}
+  m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1530695168
 MonoBehaviour:
@@ -1582,14 +1547,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 25
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Reset
+  m_Text: Reset Drone
 --- !u!222 &1643699587
 CanvasRenderer:
   m_ObjectHideFlags: 0

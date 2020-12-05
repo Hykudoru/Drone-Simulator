@@ -27,6 +27,7 @@ public class Drone : MonoBehaviour
     Vector3 move = Vector3.zero;
     Vector3 throttle = Vector3.zero;
 
+    Vector3 thrust;
 
     void Awake()
     {
@@ -44,46 +45,44 @@ public class Drone : MonoBehaviour
     {
         input.Drone.Disable();
     }
-
     
-
     private void Update()
     {
         moveInput = input.Drone.Move.ReadValue<Vector2>();
         throttleInput = input.Drone.Throttle.ReadValue<float>();
         yawInput = input.Drone.Rotate.ReadValue<float>();
 
-        move = (drone.transform.right * moveInput.x + transform.forward * moveInput.y) * moveSpeed;
-        move.y = 0;
-        throttle = drone.transform.up * throttleInput * throttleSpeed;
-        
         yaw += yawInput * yawSpeed * Time.deltaTime;
         roll = moveInput.x * maxRollDeg;
         pitch = moveInput.y * maxPitchDeg;
-                                          
+
+        move = (drone.transform.right * moveInput.x + transform.forward * moveInput.y) * moveSpeed;
+        move.y = 0;
+        throttle = drone.transform.up * throttleInput * throttleSpeed;
+
+        thrust = move + throttle;
+        // cancel gravity
+        if (counterGravity && drone.useGravity)
+        {
+            thrust += -Physics.gravity;// * Time.deltaTime;
+        }
     }
+
     private void FixedUpdate()
-    {
+    { 
         // roll/pitch/yaw
         Quaternion targetRotation = Quaternion.AngleAxis(yaw, Vector3.up)
             * Quaternion.AngleAxis(roll, -Vector3.forward)
             * Quaternion.AngleAxis(pitch, Vector3.right);
         drone.transform.localRotation = Quaternion.Slerp(drone.transform.localRotation, targetRotation, tiltSpeed * Time.deltaTime);
 
-        // cancel gravity
-        if (counterGravity && drone.useGravity)
-        {
-            drone.velocity += -Physics.gravity * Time.deltaTime;
-        }
-
         //move up/down/left/right/forward/back
-        drone.velocity += move * Time.deltaTime;
-        drone.velocity += throttle * Time.deltaTime;
+        drone.velocity += thrust * Time.deltaTime;
     }
 
     private void LateUpdate()
     {
-        //float currentPropellerSpeed = Mathf.Clamp(throttle.sqrMagnitude, 0f, 10f);
-        //animator.SetFloat("Thrust", currentPropellerSpeed);
+        float currentPropellerSpeed = Mathf.Clamp(thrust.sqrMagnitude, 0f, 10f);
+        animator.SetFloat("Thrust", currentPropellerSpeed);
     }
 }

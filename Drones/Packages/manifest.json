@@ -1,9 +1,15 @@
 {
   "dependencies": {
+    "com.unity.cinemachine": "2.3.4",
     "com.unity.collab-proxy": "1.2.16",
+    "com.unity.connect.share": "4.0.3",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.ide.vscode": "1.2.1",
     "com.unity.inputsystem": "1.0.0",
+    "com.unity.mathematics": "1.1.0",
+    "com.unity.probuilder": "4.2.3",
+    "com.unity.purchasing.udp": "2.1.0",
+    "com.unity.remote-config": "1.0.9",
     "com.unity.test-framework": "1.1.16",
     "com.unity.textmeshpro": "2.1.1",
     "com.unity.timeline": "1.2.16",

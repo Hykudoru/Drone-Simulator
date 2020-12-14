@@ -10036,7 +10036,7 @@ PrefabInstance:
     - target: {fileID: 3541209806302926730, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
       propertyPath: m_Name
-      value: Player Drone
+      value: Drone
       objectReference: {fileID: 0}
     - target: {fileID: 3541209806302926730, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
@@ -10047,6 +10047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxMoveSpeed
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893937143131440853, guid: 9feb64c7d592fb247ae0139596c5abc1,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4210028917148445952, guid: 9feb64c7d592fb247ae0139596c5abc1,
         type: 3}
@@ -43125,6 +43130,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 28135716}
     m_Modifications:
+    - target: {fileID: 1141925499314817008, guid: 84d87499ddcb9f64b969debf5efaccb8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1141925501326179905, guid: 84d87499ddcb9f64b969debf5efaccb8,
         type: 3}
       propertyPath: m_LocalPosition.x

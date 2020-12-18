@@ -26,9 +26,9 @@ public class Drone : MonoBehaviour //Flight Controller
     float roll;
     float pitch;
     float yaw;
-
-
     Vector3 changeInVelocity;
+
+
     Vector3 thrust => drone.mass * changeInVelocity;
 
     #region Experimenting
@@ -92,8 +92,10 @@ public class Drone : MonoBehaviour //Flight Controller
         }
     }
 
+
     private void FixedUpdate()
     {
+        drone.angularVelocity *= 0f;
         // roll/pitch/yaw
         Quaternion targetRotation = Quaternion.AngleAxis(yaw, Vector3.up)
             * Quaternion.AngleAxis(roll, -Vector3.forward)
@@ -103,8 +105,6 @@ public class Drone : MonoBehaviour //Flight Controller
         //move up/down/left/right/forward/back
         drone.velocity += changeInVelocity * Time.deltaTime;
     }
-
-
 
     private void LateUpdate()
     {

@@ -379,12 +379,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141925500275466636}
-  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.2, z: 5}
   m_Children: []
-  m_Father: {fileID: 1141925501326179905}
-  m_RootOrder: 2
+  m_Father: {fileID: 186713264086325619}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!33 &1141925500275466632
 MeshFilter:
@@ -478,7 +478,7 @@ Transform:
   - {fileID: 3961836917381156581}
   - {fileID: 3961836918228377546}
   m_Father: {fileID: 1141925501326179905}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141925500750797910
 GameObject:
@@ -512,7 +512,7 @@ Transform:
   - {fileID: 69216977032519738}
   - {fileID: 69216976449797049}
   m_Father: {fileID: 1141925501326179905}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141925500774402237
 GameObject:
@@ -537,15 +537,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141925500774402237}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1141925499723794489}
   - {fileID: 1141925499451123856}
   - {fileID: 1141925501341724322}
-  m_Father: {fileID: 1141925501326179905}
-  m_RootOrder: 4
+  m_Father: {fileID: 186713264086325619}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141925500904312910
 GameObject:
@@ -579,7 +579,7 @@ Transform:
   - {fileID: 2260830749918475392}
   - {fileID: 2260830749557426827}
   m_Father: {fileID: 1141925501326179905}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141925501248113791
 GameObject:
@@ -611,8 +611,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.45, y: 0.2, z: 5}
   m_Children: []
-  m_Father: {fileID: 1141925501326179905}
-  m_RootOrder: 3
+  m_Father: {fileID: 186713264086325619}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!33 &1141925501248113787
 MeshFilter:
@@ -705,9 +705,7 @@ Transform:
   m_Children:
   - {fileID: 1141925499314817010}
   - {fileID: 1141925500161287968}
-  - {fileID: 1141925500275466635}
-  - {fileID: 1141925501248113790}
-  - {fileID: 1141925500774402236}
+  - {fileID: 186713264086325619}
   - {fileID: 1141925500904312909}
   - {fileID: 1141925500750797909}
   - {fileID: 1141925500583789306}
@@ -725,8 +723,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9048395, y: 0.55028874, z: 2.814329}
-  m_Center: {x: -0.02115935, y: 0.03339398, z: 0.092835546}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &-203112279245180894
 Animator:
   serializedVersion: 3
@@ -740,7 +738,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 18f36a88a4549ce439a52a8402c3cdd9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -840,6 +838,39 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1 &7660651612948615384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 186713264086325619}
+  m_Layer: 0
+  m_Name: quadcopter:Frame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &186713264086325619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660651612948615384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1141925500275466635}
+  - {fileID: 1141925501248113790}
+  - {fileID: 1141925500774402236}
+  m_Father: {fileID: 1141925501326179905}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1141925499391120041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -916,6 +947,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5272580965764698716, guid: 4d9383cff25a91a4183e0f5c160328fb,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d9383cff25a91a4183e0f5c160328fb, type: 3}
@@ -1001,6 +1037,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5272580965764698716, guid: 4d9383cff25a91a4183e0f5c160328fb,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d9383cff25a91a4183e0f5c160328fb, type: 3}
@@ -1236,6 +1277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5272580965764698716, guid: 4d9383cff25a91a4183e0f5c160328fb,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d9383cff25a91a4183e0f5c160328fb, type: 3}
@@ -1621,6 +1667,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5272580965764698716, guid: 4d9383cff25a91a4183e0f5c160328fb,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d9383cff25a91a4183e0f5c160328fb, type: 3}

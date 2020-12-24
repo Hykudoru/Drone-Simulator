@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Drone : MonoBehaviour //Flight Controller
+public class DroneController : MonoBehaviour //Flight Controller
 {
     Rigidbody drone;
     DroneInput input;
     Animator animator;
-    [SerializeField] DroneProfile specs;
 
     [SerializeField] float maxMoveSpeed = 70f;
     [SerializeField] float maxThrottleSpeed = 50f;
@@ -55,10 +54,6 @@ public class Drone : MonoBehaviour //Flight Controller
         drone = GetComponent<Rigidbody>();
         input = new DroneInput();
         animator = GetComponent<Animator>();
-        if (specs)
-        {
-            Debug.Log(JsonUtility.ToJson(specs));
-        }
     }
 
     private void OnEnable()

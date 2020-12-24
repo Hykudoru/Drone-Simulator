@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotatePropellers : MonoBehaviour
+public class DroneUI : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

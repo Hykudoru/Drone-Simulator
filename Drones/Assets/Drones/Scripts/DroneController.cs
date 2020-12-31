@@ -11,20 +11,17 @@ public class DroneController : MonoBehaviour //Flight Controller
 
     [SerializeField] float maxMoveSpeed = 70f;
     [SerializeField] float maxThrottleSpeed = 50f;
-    /* [SerializeField] float timeReachMaxSpeed = 0f;
-     [SerializeField] float timeReachZeroSpeed = 0f;
-     [SerializeField] float timeReachMaxThrottle = 0f;*/
     [SerializeField] float maxYawSpeed = 360f;
     [SerializeField] float maxTiltSpeed = 20f;
     [SerializeField] [Range(10, 60f)] float maxRollDeg = 28f;
     [SerializeField] [Range(10, 60f)] float maxPitchDeg = 28f;
     [SerializeField] [Range(10, 60f)] float maxTiltDeg = 28f;
-    [SerializeField] bool counterGravity = true;
-    [SerializeField] bool autoStabalizeOrientation = true;
+    [SerializeField] bool hover = true;
+    [SerializeField] bool stabalizeOrientation = true;
 
     float roll;
     float pitch;
-    float yaw;
+    float yaw;//rotation
     Vector3 changeInVelocity;
 
 
@@ -45,6 +42,14 @@ public class DroneController : MonoBehaviour //Flight Controller
     }
     public float TiltRate => 0f;//if is upsidedown, increase tilt acceleration so drone rotates faster.
 
+    void _CalcThrust()
+    {
+        float v = maxMoveSpeed;
+        Vector2 vect = new Vector2(v, -Physics.gravity.y);
+        var tilt = Mathf.Atan2(vect.x, vect.y) * 180f / Mathf.PI;
+        var thrust = vect.magnitude;
+        Debug.Log($"{vect} : angle {tilt} magnitude {thrust}");
+    }
     #endregion
 
 
@@ -81,7 +86,7 @@ public class DroneController : MonoBehaviour //Flight Controller
         changeInVelocity += throttleInput  * drone.transform.up * maxThrottleSpeed;
 
         // cancel gravity
-        if (counterGravity && drone.useGravity)
+        if (hover && drone.useGravity)
         {
             changeInVelocity += -Physics.gravity;
         }

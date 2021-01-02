@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 6704451313206957158}
   - component: {fileID: 4114912884700400144}
   - component: {fileID: 7187637486439539555}
-  - component: {fileID: 2917631951463458674}
   m_Layer: 5
   m_Name: DroneUI
   m_TagString: Untagged
@@ -251,21 +250,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2917631951463458674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4302744888876298090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0913eace780987418471554f962e486, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  droneUIPanel: {fileID: 0}
-  uiJoystickDroneYawThrottle: {fileID: 0}
-  uiJoysticDroneMovement: {fileID: 0}
 --- !u!1 &5777551913250524589
 GameObject:
   m_ObjectHideFlags: 0

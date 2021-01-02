@@ -38,7 +38,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -63,7 +63,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -88,7 +88,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -113,7 +113,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
@@ -126,28 +126,28 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3716256656
+      path: 3063540441
       attribute: 4
       script: {fileID: 0}
       typeID: 4
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1149813290
+      path: 798014307
       attribute: 4
       script: {fileID: 0}
       typeID: 4
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 865071804
+      path: 1486326773
       attribute: 4
       script: {fileID: 0}
       typeID: 4
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2917885727
+      path: 3337821782
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -182,7 +182,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -210,7 +210,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -220,7 +220,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -230,7 +230,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -258,7 +258,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -268,7 +268,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -278,7 +278,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -306,7 +306,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -316,7 +316,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -326,7 +326,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -354,7 +354,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -364,7 +364,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:
@@ -374,8 +374,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
+    attribute: m_LocalEulerAngles.z
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -385,17 +385,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -405,17 +395,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -425,7 +405,17 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -435,17 +425,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -455,7 +435,17 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller3
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -465,7 +455,17 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -475,7 +475,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -485,7 +485,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
+    path: Model/Quadcopter/quadcopter:Propellers/quadcopter:Propeller4
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
